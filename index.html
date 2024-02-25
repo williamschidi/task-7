@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header-nav">
+        <h1 class="header-title">WillTech</h1>
+
+        <ul class="navigation">
+          <li class="nav-item">sign up</li>
+          <li class="nav-item">login</li>
+          <li class="nav-item">contact us</li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="todo-form-container">
+        <form>
+          <div class="add-task-container">
+            <div class="label-container"><label>Add Task</label></div>
+            <input type="text" placeholder="Input value" id="addInput" />
+            <button id="add-task">Add Task</button>
+          </div>
+          <div class="edit-task-container hidden">
+            <div class="label-container"><label>Edit Task</label></div>
+            <input type="text" placeholder="Input Value" id="editInput" />
+            <button id="edit-task">Edit Task</button>
+          </div>
+        </form>
+      </section>
+      <section class="todo-list-container">
+        <button class="view-to-do">Click To See Your To-Do Task</button>
+        <ul class="task"></ul>
+      </section>
+    </main>
+    <footer>
+      <p class="footer">
+        &copy; <small>2024</small> WillTech. All rights reserved.
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

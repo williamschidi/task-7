@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'inter';
+}
+body {
+  height: 100%;
+}
+
+.header {
+  background: #212529;
+  color: #f4fce3;
+}
+
+.header-nav {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.8rem;
+}
+
+.header-title {
+  text-transform: uppercase;
+  font-size: 2.8rem;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  list-style: none;
+}
+.nav-item {
+  padding: 0.7rem 2rem;
+  border-bottom: 0.2rem solid #212529;
+  border-top: 0.2rem solid #212529;
+
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.nav-item:hover {
+  border-bottom: 0.2rem solid #f4fce3;
+  cursor: pointer;
+  background-color: #444749;
+  border-radius: 0.4rem;
+}
+
+main {
+  background: #212529;
+  /* height: 100vh; */
+}
+
+.todo-form-container {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding-top: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.label-container {
+  margin-bottom: 1.2rem;
+}
+label {
+  font-size: 2rem;
+  color: #fff;
+}
+input {
+  padding: 0.7rem 1.8rem;
+  width: 40rem;
+  margin-right: 2rem;
+  margin-bottom: 3rem;
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+  border-left: 0.2rem solid #fff;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  background: #fff;
+  color: #212529;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #eeeaea;
+}
+
+button:active {
+  /* background: #b8b5b5; */
+  box-shadow: inset 0 0.2rem 0.4rem rgba(0, 0, 0, 0.6);
+}
+
+.todo-list-container {
+  max-width: 100rem;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list-container .view-to-do {
+  display: inline-flex;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #0c0c0c;
+  padding-bottom: 0.7rem;
+}
+
+.task {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+  gap: 1.6rem;
+  color: #fff;
+  width: 80rem;
+}
+.layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10rem;
+  font-size: 1.8rem;
+  border-bottom: 0.1rem solid#ccc;
+}
+
+.format {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.task li input[type='checkbox'] {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem; /* Adjust spacing between checkbox and text */
+}
+.hidden {
+  display: none;
+}
+
+footer {
+  margin-top: auto;
+}
