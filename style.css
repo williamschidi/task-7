@@ -193,7 +193,7 @@ button:active {
   }
 
   .todo-form-container {
-    max-width: 45rem;
+    max-width: 50rem;
   }
   .label-container {
     margin-bottom: 0.8rem;
@@ -202,61 +202,27 @@ button:active {
     font-size: 1.6rem;
   }
   input {
-    width: 30rem;
+    width: 20rem;
     margin-right: 1rem;
     margin-bottom: 2rem;
   }
 
   .todo-list-container {
-    max-width: 50rem;
+    max-width: 40rem;
     margin: 4rem auto;
     gap: 1.5rem;
   }
 
   .view-to-do {
     display: inline-flex;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: bold;
     color: #0c0c0c;
     padding-bottom: 1.8rem;
   }
 
   .task {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: space-between;
     gap: 1.4rem;
-    color: #fff;
     width: 40rem;
-  }
-  .layout {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10rem;
-    font-size: 1.8rem;
-    border-bottom: 0.1rem solid#ccc;
-  }
-
-  .format {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
-  }
-
-  .task li input[type='checkbox'] {
-    width: 2rem;
-    height: 2rem;
-    margin-right: 1rem;
-  }
-  .hidden {
-    display: none;
-  }
-  .toggle {
-    text-decoration: line-through;
-    color: #f4fce3;
-    text-decoration-thickness: 0.3rem;
   }
 }
