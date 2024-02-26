@@ -157,3 +157,8 @@ button:active {
 .hidden {
   display: none;
 }
+.toggle {
+  text-decoration: line-through;
+  color: #f4fce3;
+  text-decoration-thickness: 0.3rem;
+}

@@ -48,10 +48,20 @@ function viewTask(e) {
 
     li.appendChild(textContainer);
     li.appendChild(spanBtn);
-    li.setAttribute('data-id', ind);
-    editBtn.setAttribute('data-id', ind);
-    delBtn.setAttribute('data-id', ind);
+
+    // li.setAttribute('data-id', ind);
+    // editBtn.setAttribute('data-id', ind);
+    // delBtn.setAttribute('data-id', ind);
     ul.appendChild(li), todoList;
+
+    checkbox.addEventListener('change', function () {
+      if (checkbox.value === 'checked') {
+        spanText.classList.toggle('toggle');
+        spanBtn.classList.toggle('hidden');
+      }
+    });
+
+    console.log(spanText.textContent);
 
     deleteTask(delBtn, li, todoList);
 
@@ -61,7 +71,6 @@ function viewTask(e) {
 
 function updateTask(btn, btn2, taskArray, id) {
   btn.addEventListener('click', function (e) {
-    // const id = e.target.dataset.id;
     console.log(id, taskArray[id]);
 
     document.querySelector('.add-task-container').classList.toggle('hidden');
@@ -70,16 +79,15 @@ function updateTask(btn, btn2, taskArray, id) {
     btn2.addEventListener('click', (e) => {
       e.preventDefault();
 
+      document.querySelector('.add-task-container').classList.toggle('hidden');
+      document.querySelector('.edit-task-container').classList.toggle('hidden');
       const editValue = document.querySelector('#editInput').value;
 
-      taskArray[id] = editValue;
+      taskArray[id] = editValue[0].toUpperCase() + editValue.slice(1);
 
       console.log(taskArray);
 
       viewTask(e);
-
-      document.querySelector('.add-task-container').classList.toggle('hidden');
-      document.querySelector('.edit-task-container').classList.toggle('hidden');
     });
   });
 }
