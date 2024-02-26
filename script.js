@@ -44,6 +44,7 @@ function viewTask(e) {
     textContainer.appendChild(spanText);
     textContainer.classList.add('format');
 
+    spanBtn.classList.add('btn-li');
     li.classList.add('layout');
 
     li.appendChild(textContainer);
