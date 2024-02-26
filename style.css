@@ -9,11 +9,15 @@ html {
   font-family: 'inter';
 }
 body {
-  height: 100%;
+  height: 100vh;
+  background-image: url(img/current-bg.PNG);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
 .header {
-  background: #212529;
   color: #f4fce3;
 }
 
@@ -41,8 +45,8 @@ body {
 }
 .nav-item {
   padding: 0.7rem 2rem;
-  border-bottom: 0.2rem solid #212529;
-  border-top: 0.2rem solid #212529;
+  border-bottom: 0.2rem solid transparent;
+  border-top: 0.2rem solid transparent;
 
   text-align: center;
   text-transform: capitalize;
@@ -51,13 +55,11 @@ body {
 .nav-item:hover {
   border-bottom: 0.2rem solid #f4fce3;
   cursor: pointer;
-  background-color: #444749;
   border-radius: 0.4rem;
 }
 
 main {
-  background: #212529;
-  /* height: 100vh; */
+  height: 80vh;
 }
 
 .todo-form-container {
@@ -101,7 +103,6 @@ button:hover {
 }
 
 button:active {
-  /* background: #b8b5b5; */
   box-shadow: inset 0 0.2rem 0.4rem rgba(0, 0, 0, 0.6);
 }
 
@@ -151,12 +152,8 @@ button:active {
 .task li input[type='checkbox'] {
   width: 2rem;
   height: 2rem;
-  margin-right: 1rem; /* Adjust spacing between checkbox and text */
+  margin-right: 1rem;
 }
 .hidden {
   display: none;
-}
-
-footer {
-  margin-top: auto;
 }

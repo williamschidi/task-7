@@ -44,35 +44,53 @@ function viewTask(e) {
     textContainer.appendChild(spanText);
     textContainer.classList.add('format');
 
-    delBtn.onclick = function () {
-      li.remove();
-    };
-
-    editBtn.addEventListener('click', function () {
-      document.querySelector('.add-task-container').classList.toggle('hidden');
-      document.querySelector('.edit-task-container').classList.toggle('hidden');
-
-      editTaskBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        const editValue = document.querySelector('#edit-task').value;
-        spanText.textContent = editValue;
-
-        document
-          .querySelector('.add-task-container')
-          .classList.toggle('hidden');
-        document
-          .querySelector('.edit-task-container')
-          .classList.toggle('hidden');
-      });
-    });
-
     li.classList.add('layout');
 
     li.appendChild(textContainer);
     li.appendChild(spanBtn);
+    li.setAttribute('data-id', ind);
+    editBtn.setAttribute('data-id', ind);
+    delBtn.setAttribute('data-id', ind);
+    ul.appendChild(li), todoList;
 
-    console.log(ul.appendChild(li), todoList);
+    deleteTask(delBtn, li, todoList);
+
+    updateTask(editBtn, editTaskBtn, todoList, ind);
+  });
+}
+
+function updateTask(btn, btn2, taskArray, id) {
+  btn.addEventListener('click', function (e) {
+    // const id = e.target.dataset.id;
+    console.log(id, taskArray[id]);
+
+    document.querySelector('.add-task-container').classList.toggle('hidden');
+    document.querySelector('.edit-task-container').classList.toggle('hidden');
+
+    btn2.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const editValue = document.querySelector('#editInput').value;
+
+      taskArray[id] = editValue;
+
+      console.log(taskArray);
+
+      viewTask(e);
+
+      document.querySelector('.add-task-container').classList.toggle('hidden');
+      document.querySelector('.edit-task-container').classList.toggle('hidden');
+    });
+  });
+}
+
+function deleteTask(del, li, dataArray) {
+  del.addEventListener('click', (e) => {
+    const id = Number(e.target.dataset.id);
+    console.log(id);
+    dataArray.splice(id, 1);
+    li.remove();
+    return dataArray;
   });
 }
 
