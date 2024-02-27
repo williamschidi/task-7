@@ -38,41 +38,47 @@ function viewTask(e) {
     editBtn.classList.add('edit');
     spanBtn.appendChild(delBtn);
     spanBtn.appendChild(editBtn);
+    spanBtn.classList.add('btn-li');
+
+    delBtn.setAttribute('id', ind);
+    editBtn.setAttribute('id', ind);
 
     spanText.appendChild(document.createTextNode(arr));
+    spanText.classList.add('li-text');
     textContainer.appendChild(checkbox);
     textContainer.appendChild(spanText);
     textContainer.classList.add('format');
 
-    spanBtn.classList.add('btn-li');
-    li.classList.add('layout');
+    const taskId = ind;
 
+    li.classList.add('layout');
     li.appendChild(textContainer);
     li.appendChild(spanBtn);
 
-    // li.setAttribute('data-id', ind);
-    // editBtn.setAttribute('data-id', ind);
-    // delBtn.setAttribute('data-id', ind);
-    ul.appendChild(li), todoList;
+    li.setAttribute('id', taskId);
+
+    ul.appendChild(li);
 
     checkbox.addEventListener('change', function () {
-      if (checkbox.value === 'checked') {
-        spanText.classList.toggle('toggle');
-        spanBtn.classList.toggle('hidden');
-      }
+      spanText.classList.toggle('toggle');
+      spanBtn.classList.toggle('hidden');
     });
-
-    console.log(spanText.textContent);
 
     deleteTask(delBtn, li, todoList);
 
-    updateTask(editBtn, editTaskBtn, todoList, ind);
+    updateTask(editBtn, editTaskBtn, todoList);
   });
 }
 
-function updateTask(btn, btn2, taskArray, id) {
+function updateTask(btn, btn2, taskArray) {
   btn.addEventListener('click', function (e) {
-    console.log(id, taskArray[id]);
+    e.preventDefault();
+    if (document.querySelector('#editInput').value !== '') {
+      document.querySelector('#editInput').value = '';
+    }
+    const id = e.target.getAttribute('id');
+
+    const text = e.target.closest('li').querySelector('.li-text');
 
     document.querySelector('.add-task-container').classList.toggle('hidden');
     document.querySelector('.edit-task-container').classList.toggle('hidden');
@@ -80,23 +86,20 @@ function updateTask(btn, btn2, taskArray, id) {
     btn2.addEventListener('click', (e) => {
       e.preventDefault();
 
+      const editValue = document.querySelector('#editInput').value;
+      text.innerHTML = editValue;
+
       document.querySelector('.add-task-container').classList.toggle('hidden');
       document.querySelector('.edit-task-container').classList.toggle('hidden');
-      const editValue = document.querySelector('#editInput').value;
 
       taskArray[id] = editValue[0].toUpperCase() + editValue.slice(1);
-
-      console.log(taskArray);
-
-      viewTask(e);
     });
   });
 }
 
 function deleteTask(del, li, dataArray) {
   del.addEventListener('click', (e) => {
-    const id = Number(e.target.dataset.id);
-    console.log(id);
+    const id = Number(e.target.getAttribute('id'));
     dataArray.splice(id, 1);
     li.remove();
     return dataArray;
