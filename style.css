@@ -224,7 +224,7 @@ button:active {
 
   .task {
     gap: 1.4rem;
-    width: 40rem;
+    width: 35rem;
   }
 
   button {
@@ -241,8 +241,5 @@ button:active {
   }
   .btn-li {
     padding: 0.4rem 1rem;
-  }
-
-  .myCheckbox {
   }
 }
