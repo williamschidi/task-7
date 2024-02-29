@@ -3,6 +3,8 @@
 const addTaskBtn = document.getElementById('add-task');
 const editTaskBtn = document.getElementById('edit-task');
 const viewTaskBtn = document.querySelector('.view-to-do');
+const hamburger = document.querySelector('.hamburger');
+
 const ul = document.querySelector('.task');
 
 const todoList = [];
@@ -106,5 +108,18 @@ function deleteTask(del, li, dataArray) {
   });
 }
 
+function open() {
+  const firstBar = document.querySelector('.bar-1');
+  const secondBar = document.querySelector('.bar-2');
+  const thirdBar = document.querySelector('.bar-3');
+  const modal = document.querySelector('.slide-in-nav');
+
+  firstBar.classList.toggle('first');
+  secondBar.classList.toggle('second');
+  thirdBar.classList.toggle('third');
+  modal.classList.toggle('show-modal');
+}
+
 addTaskBtn.addEventListener('click', addTask);
 viewTaskBtn.addEventListener('click', viewTask);
+hamburger.addEventListener('click', open);
